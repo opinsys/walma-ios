@@ -20,10 +20,34 @@
 
 - (void)viewDidLoad
 {
+    
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
+#pragma mark -
 
+-(IBAction)getCameraPicture:(id)sender{
+    UIImagePickerController *picker =
+    [[UIImagePickerController alloc] init];
+    
+    picker.delegate = self;
+    picker.allowsEditing = NO;
+    picker.sourceType = (sender == takePictureButton) ?
+    UIImagePickerControllerSourceTypeCamera :
+    UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+    [self presentModalViewController:picker animated:YES];
+    [picker release];
+}
+#pragma mark -
+
+-(void) imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo{
+    imageView.image = image;
+    [picker dismissModalViewControllerAnimated:YES];
+}
+
+-(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
+    [picker dismissModalViewControllerAnimated:YES];   
+}
 - (void)viewDidUnload
 {
     [super viewDidUnload];

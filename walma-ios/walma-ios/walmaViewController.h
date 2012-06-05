@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface walmaViewController : UIViewController
-
+@interface walmaViewController : UIViewController <UIImagePickerControllerDelegate,UINavigationControllerDelegate> {
+    UIButton *takePictureButton;
+    UIImageView *imageView;
+}
+@property (nonatomic,retain)IBOutlet UIImageView *imageView;
+@property (nonatomic,retain)IBOutlet UIButton *takePictureButton;
+-(IBAction)getCameraPicture:(id)sender;
 @end

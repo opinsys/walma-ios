@@ -371,6 +371,7 @@
 		E3E90EBD157D3DA3004F1127 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "walma-ios/walma-ios-Prefix.pch";
 				INFOPLIST_FILE = "walma-ios/walma-ios-Info.plist";
@@ -382,6 +383,7 @@
 		E3E90EBE157D3DA3004F1127 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "walma-ios/walma-ios-Prefix.pch";
 				INFOPLIST_FILE = "walma-ios/walma-ios-Info.plist";
@@ -443,6 +445,7 @@
 				E3E90EBE157D3DA3004F1127 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E3E90EBF157D3DA3004F1127 /* Build configuration list for PBXNativeTarget "walma-iosTests" */ = {
 			isa = XCConfigurationList;
@@ -451,6 +454,7 @@
 				E3E90EC1157D3DA3004F1127 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
