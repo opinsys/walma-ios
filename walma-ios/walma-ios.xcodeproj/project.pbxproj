@@ -1,0 +1,458 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E3E90E8B157D3DA3004F1127 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3E90E8A157D3DA3004F1127 /* UIKit.framework */; };
+		E3E90E8D157D3DA3004F1127 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3E90E8C157D3DA3004F1127 /* Foundation.framework */; };
+		E3E90E8F157D3DA3004F1127 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3E90E8E157D3DA3004F1127 /* CoreGraphics.framework */; };
+		E3E90E95157D3DA3004F1127 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E3E90E93157D3DA3004F1127 /* InfoPlist.strings */; };
+		E3E90E97157D3DA3004F1127 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E3E90E96157D3DA3004F1127 /* main.m */; };
+		E3E90E9B157D3DA3004F1127 /* walmaAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E3E90E9A157D3DA3004F1127 /* walmaAppDelegate.m */; };
+		E3E90E9E157D3DA3004F1127 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3E90E9C157D3DA3004F1127 /* MainStoryboard_iPhone.storyboard */; };
+		E3E90EA1157D3DA3004F1127 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3E90E9F157D3DA3004F1127 /* MainStoryboard_iPad.storyboard */; };
+		E3E90EA4157D3DA3004F1127 /* walmaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3E90EA3157D3DA3004F1127 /* walmaViewController.m */; };
+		E3E90EAC157D3DA3004F1127 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3E90EAB157D3DA3004F1127 /* SenTestingKit.framework */; };
+		E3E90EAD157D3DA3004F1127 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3E90E8A157D3DA3004F1127 /* UIKit.framework */; };
+		E3E90EAE157D3DA3004F1127 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3E90E8C157D3DA3004F1127 /* Foundation.framework */; };
+		E3E90EB6157D3DA3004F1127 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E3E90EB4157D3DA3004F1127 /* InfoPlist.strings */; };
+		E3E90EB9157D3DA3004F1127 /* walma_iosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E3E90EB8157D3DA3004F1127 /* walma_iosTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E3E90EAF157D3DA3004F1127 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E3E90E7D157D3DA2004F1127 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E3E90E85157D3DA2004F1127;
+			remoteInfo = "walma-ios";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E3E90E86157D3DA3004F1127 /* walma-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "walma-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3E90E8A157D3DA3004F1127 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E3E90E8C157D3DA3004F1127 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E3E90E8E157D3DA3004F1127 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E3E90E92157D3DA3004F1127 /* walma-ios-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "walma-ios-Info.plist"; sourceTree = "<group>"; };
+		E3E90E94157D3DA3004F1127 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E3E90E96157D3DA3004F1127 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E3E90E98157D3DA3004F1127 /* walma-ios-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "walma-ios-Prefix.pch"; sourceTree = "<group>"; };
+		E3E90E99157D3DA3004F1127 /* walmaAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = walmaAppDelegate.h; sourceTree = "<group>"; };
+		E3E90E9A157D3DA3004F1127 /* walmaAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = walmaAppDelegate.m; sourceTree = "<group>"; };
+		E3E90E9D157D3DA3004F1127 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		E3E90EA0157D3DA3004F1127 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		E3E90EA2157D3DA3004F1127 /* walmaViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = walmaViewController.h; sourceTree = "<group>"; };
+		E3E90EA3157D3DA3004F1127 /* walmaViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = walmaViewController.m; sourceTree = "<group>"; };
+		E3E90EAA157D3DA3004F1127 /* walma-iosTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "walma-iosTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3E90EAB157D3DA3004F1127 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		E3E90EB3157D3DA3004F1127 /* walma-iosTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "walma-iosTests-Info.plist"; sourceTree = "<group>"; };
+		E3E90EB5157D3DA3004F1127 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E3E90EB7157D3DA3004F1127 /* walma_iosTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = walma_iosTests.h; sourceTree = "<group>"; };
+		E3E90EB8157D3DA3004F1127 /* walma_iosTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = walma_iosTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E3E90E83157D3DA2004F1127 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3E90E8B157D3DA3004F1127 /* UIKit.framework in Frameworks */,
+				E3E90E8D157D3DA3004F1127 /* Foundation.framework in Frameworks */,
+				E3E90E8F157D3DA3004F1127 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3E90EA6157D3DA3004F1127 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3E90EAC157D3DA3004F1127 /* SenTestingKit.framework in Frameworks */,
+				E3E90EAD157D3DA3004F1127 /* UIKit.framework in Frameworks */,
+				E3E90EAE157D3DA3004F1127 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E3E90E7B157D3DA2004F1127 = {
+			isa = PBXGroup;
+			children = (
+				E3E90E90157D3DA3004F1127 /* walma-ios */,
+				E3E90EB1157D3DA3004F1127 /* walma-iosTests */,
+				E3E90E89157D3DA3004F1127 /* Frameworks */,
+				E3E90E87157D3DA3004F1127 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E3E90E87157D3DA3004F1127 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E3E90E86157D3DA3004F1127 /* walma-ios.app */,
+				E3E90EAA157D3DA3004F1127 /* walma-iosTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E3E90E89157D3DA3004F1127 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E3E90E8A157D3DA3004F1127 /* UIKit.framework */,
+				E3E90E8C157D3DA3004F1127 /* Foundation.framework */,
+				E3E90E8E157D3DA3004F1127 /* CoreGraphics.framework */,
+				E3E90EAB157D3DA3004F1127 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E3E90E90157D3DA3004F1127 /* walma-ios */ = {
+			isa = PBXGroup;
+			children = (
+				E3E90E99157D3DA3004F1127 /* walmaAppDelegate.h */,
+				E3E90E9A157D3DA3004F1127 /* walmaAppDelegate.m */,
+				E3E90E9C157D3DA3004F1127 /* MainStoryboard_iPhone.storyboard */,
+				E3E90E9F157D3DA3004F1127 /* MainStoryboard_iPad.storyboard */,
+				E3E90EA2157D3DA3004F1127 /* walmaViewController.h */,
+				E3E90EA3157D3DA3004F1127 /* walmaViewController.m */,
+				E3E90E91157D3DA3004F1127 /* Supporting Files */,
+			);
+			path = "walma-ios";
+			sourceTree = "<group>";
+		};
+		E3E90E91157D3DA3004F1127 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E3E90E92157D3DA3004F1127 /* walma-ios-Info.plist */,
+				E3E90E93157D3DA3004F1127 /* InfoPlist.strings */,
+				E3E90E96157D3DA3004F1127 /* main.m */,
+				E3E90E98157D3DA3004F1127 /* walma-ios-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E3E90EB1157D3DA3004F1127 /* walma-iosTests */ = {
+			isa = PBXGroup;
+			children = (
+				E3E90EB7157D3DA3004F1127 /* walma_iosTests.h */,
+				E3E90EB8157D3DA3004F1127 /* walma_iosTests.m */,
+				E3E90EB2157D3DA3004F1127 /* Supporting Files */,
+			);
+			path = "walma-iosTests";
+			sourceTree = "<group>";
+		};
+		E3E90EB2157D3DA3004F1127 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E3E90EB3157D3DA3004F1127 /* walma-iosTests-Info.plist */,
+				E3E90EB4157D3DA3004F1127 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E3E90E85157D3DA2004F1127 /* walma-ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E3E90EBC157D3DA3004F1127 /* Build configuration list for PBXNativeTarget "walma-ios" */;
+			buildPhases = (
+				E3E90E82157D3DA2004F1127 /* Sources */,
+				E3E90E83157D3DA2004F1127 /* Frameworks */,
+				E3E90E84157D3DA2004F1127 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "walma-ios";
+			productName = "walma-ios";
+			productReference = E3E90E86157D3DA3004F1127 /* walma-ios.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E3E90EA9157D3DA3004F1127 /* walma-iosTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E3E90EBF157D3DA3004F1127 /* Build configuration list for PBXNativeTarget "walma-iosTests" */;
+			buildPhases = (
+				E3E90EA5157D3DA3004F1127 /* Sources */,
+				E3E90EA6157D3DA3004F1127 /* Frameworks */,
+				E3E90EA7157D3DA3004F1127 /* Resources */,
+				E3E90EA8157D3DA3004F1127 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E3E90EB0157D3DA3004F1127 /* PBXTargetDependency */,
+			);
+			name = "walma-iosTests";
+			productName = "walma-iosTests";
+			productReference = E3E90EAA157D3DA3004F1127 /* walma-iosTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E3E90E7D157D3DA2004F1127 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = E3E90E80157D3DA2004F1127 /* Build configuration list for PBXProject "walma-ios" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E3E90E7B157D3DA2004F1127;
+			productRefGroup = E3E90E87157D3DA3004F1127 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E3E90E85157D3DA2004F1127 /* walma-ios */,
+				E3E90EA9157D3DA3004F1127 /* walma-iosTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E3E90E84157D3DA2004F1127 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3E90E95157D3DA3004F1127 /* InfoPlist.strings in Resources */,
+				E3E90E9E157D3DA3004F1127 /* MainStoryboard_iPhone.storyboard in Resources */,
+				E3E90EA1157D3DA3004F1127 /* MainStoryboard_iPad.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3E90EA7157D3DA3004F1127 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3E90EB6157D3DA3004F1127 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E3E90EA8157D3DA3004F1127 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E3E90E82157D3DA2004F1127 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3E90E97157D3DA3004F1127 /* main.m in Sources */,
+				E3E90E9B157D3DA3004F1127 /* walmaAppDelegate.m in Sources */,
+				E3E90EA4157D3DA3004F1127 /* walmaViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3E90EA5157D3DA3004F1127 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3E90EB9157D3DA3004F1127 /* walma_iosTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E3E90EB0157D3DA3004F1127 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E3E90E85157D3DA2004F1127 /* walma-ios */;
+			targetProxy = E3E90EAF157D3DA3004F1127 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E3E90E93157D3DA3004F1127 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E3E90E94157D3DA3004F1127 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E3E90E9C157D3DA3004F1127 /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E3E90E9D157D3DA3004F1127 /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		E3E90E9F157D3DA3004F1127 /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E3E90EA0157D3DA3004F1127 /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		E3E90EB4157D3DA3004F1127 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E3E90EB5157D3DA3004F1127 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E3E90EBA157D3DA3004F1127 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E3E90EBB157D3DA3004F1127 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E3E90EBD157D3DA3004F1127 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "walma-ios/walma-ios-Prefix.pch";
+				INFOPLIST_FILE = "walma-ios/walma-ios-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E3E90EBE157D3DA3004F1127 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "walma-ios/walma-ios-Prefix.pch";
+				INFOPLIST_FILE = "walma-ios/walma-ios-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		E3E90EC0157D3DA3004F1127 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/walma-ios.app/walma-ios";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "walma-ios/walma-ios-Prefix.pch";
+				INFOPLIST_FILE = "walma-iosTests/walma-iosTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		E3E90EC1157D3DA3004F1127 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/walma-ios.app/walma-ios";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "walma-ios/walma-ios-Prefix.pch";
+				INFOPLIST_FILE = "walma-iosTests/walma-iosTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E3E90E80157D3DA2004F1127 /* Build configuration list for PBXProject "walma-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3E90EBA157D3DA3004F1127 /* Debug */,
+				E3E90EBB157D3DA3004F1127 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E3E90EBC157D3DA3004F1127 /* Build configuration list for PBXNativeTarget "walma-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3E90EBD157D3DA3004F1127 /* Debug */,
+				E3E90EBE157D3DA3004F1127 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E3E90EBF157D3DA3004F1127 /* Build configuration list for PBXNativeTarget "walma-iosTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3E90EC0157D3DA3004F1127 /* Debug */,
+				E3E90EC1157D3DA3004F1127 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E3E90E7D157D3DA2004F1127 /* Project object */;
+}
