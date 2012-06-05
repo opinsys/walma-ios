@@ -38,6 +38,30 @@
     [self presentModalViewController:picker animated:YES];
     [picker release];
 }
+
+-(IBAction)selectImage{
+    if([UIImagePickerController isSourceTypeAvailable:
+        UIImagePickerControllerSourceTypePhotoLibrary]){
+        UIImagePickerController *picker =
+        [[UIImagePickerController alloc] init];
+        picker.delegate = self;
+        picker.allowsEditing = NO;
+        picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        [self presentModalViewController:picker animated:YES];
+        [picker release];
+    }
+    else{
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle:@"error accessing gallery"
+                              message:@"devicedoes not support gallery"
+                              delegate:nil
+                              cancelButtonTitle:@"Dismis"
+                              otherButtonTitles:nil];
+        [alert show];
+        [alert release];
+    }
+}
+
 #pragma mark -
 
 -(void) imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo{

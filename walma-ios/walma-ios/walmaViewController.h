@@ -15,4 +15,6 @@
 @property (nonatomic,retain)IBOutlet UIImageView *imageView;
 @property (nonatomic,retain)IBOutlet UIButton *takePictureButton;
 -(IBAction)getCameraPicture:(id)sender;
+-(IBAction)selectImage:(id)sender;
+
 @end
