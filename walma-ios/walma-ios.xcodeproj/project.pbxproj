@@ -26,6 +26,7 @@
 		E385F3DB1586975100137EB6 /* README-GHUnit in Resources */ = {isa = PBXBuildFile; fileRef = E385F3B21586975100137EB6 /* README-GHUnit */; };
 		E385F3DC1586975100137EB6 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = E385F3B51586975100137EB6 /* Reachability.m */; };
 		E3ABA10F158712DC00866DF1 /* walmaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3ABA10E158712DC00866DF1 /* walmaViewController.m */; };
+		E3ABA11D1587423B00866DF1 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E3ABA11C1587423B00866DF1 /* Settings.bundle */; };
 		E3E90E8B157D3DA3004F1127 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3E90E8A157D3DA3004F1127 /* UIKit.framework */; };
 		E3E90E8D157D3DA3004F1127 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3E90E8C157D3DA3004F1127 /* Foundation.framework */; };
 		E3E90E8F157D3DA3004F1127 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3E90E8E157D3DA3004F1127 /* CoreGraphics.framework */; };
@@ -85,6 +86,7 @@
 		E385F3B41586975100137EB6 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		E385F3B51586975100137EB6 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		E3ABA10E158712DC00866DF1 /* walmaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = walmaViewController.m; sourceTree = "<group>"; };
+		E3ABA11C1587423B00866DF1 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		E3E90E86157D3DA3004F1127 /* walma-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "walma-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3E90E8A157D3DA3004F1127 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E3E90E8C157D3DA3004F1127 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -201,6 +203,7 @@
 		E3E90E7B157D3DA2004F1127 = {
 			isa = PBXGroup;
 			children = (
+				E3ABA11C1587423B00866DF1 /* Settings.bundle */,
 				E385F35B1586954200137EB6 /* libxml2.2.7.3.dylib */,
 				E385F3591586953600137EB6 /* libz.dylib */,
 				E385F3571586951C00137EB6 /* CFNetwork.framework */,
@@ -357,6 +360,7 @@
 				E3511FD3157E0E840095BF55 /* walma.png in Resources */,
 				E3511FD6157E0FF40095BF55 /* walma_pad.png in Resources */,
 				E385F3DB1586975100137EB6 /* README-GHUnit in Resources */,
+				E3ABA11D1587423B00866DF1 /* Settings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

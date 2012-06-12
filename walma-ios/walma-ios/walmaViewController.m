@@ -24,8 +24,15 @@
 
 - (void)viewDidLoad
 {
+    NSString *servername = [[NSUserDefaults standardUserDefaults] stringForKey:@"walmaserver_preference"];
+    NSLog(@"name before is %@", servername);
+
     
-    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *server = [defaults stringForKey:@"walmaserver_preference"];
+//    NSString *kissa = @"kissa";
+//    NSLog(server);
+//    NSLog(kissa);
     UIBarButtonItem *cameraButton = [[UIBarButtonItem alloc] 
                                      initWithTitle:@"Camera"
                                      style:UIBarButtonItemStyleBordered
@@ -67,14 +74,19 @@
 }
 -(IBAction)sendImage:(id)sender
 {
+
     /*
 	 turning the image into a NSData object
 	 getting the image back out of the UIImageView
 	 setting the quality to 90
      */
-	NSData *imageData = UIImageJPEGRepresentation(imageView.image, 1.0);
+    //here we load servername from preferences  
+    NSString *servername = [[NSUserDefaults standardUserDefaults] stringForKey:@"walmaserver_preference"];
+    NSString *serverurl = [NSString stringWithFormat:@"%@/api/create_multipart",servername];
+    NSString *remotekey = [[NSUserDefaults standardUserDefaults] stringForKey:@"remotekey_preference"];
+  	NSData *imageData = UIImageJPEGRepresentation(imageView.image, 1.0);
 	// setting up the URL to post to
-    NSURL *url = [NSURL URLWithString:@"http://walmademo.opinsys.fi/api/create_multipart"];
+    NSURL *url = [NSURL URLWithString:serverurl];
 	
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
     
@@ -82,6 +94,7 @@
     
     // Upload an NSData instance
     //TODO we need json support for response string
+    [request setPostValue:remotekey forKey:@"remotekey"];
     [request setData:imageData withFileName:@"myphoto.jpg" andContentType:@"image/jpeg" forKey:@"image"];
     [request startSynchronous];
     NSError *error = [request error];
@@ -95,6 +108,13 @@
         NSLog(@"%@",[request responseString]);
         NSString * uri = [NSString stringWithFormat:@"http://walmademo.opinsys.fi%@",afterOpenBracket];
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:uri]];
+//        [uri release];
+//        [response release];
+        imageData = nil;
+        imageView.image = nil;
+//        [imageData release];
+//        [url release];
+//        [request release];
         
     }  
 
@@ -112,7 +132,7 @@
         imagePicker.mediaTypes = [NSArray arrayWithObjects:
                                   (NSString *) kUTTypeImage,
                                   nil];
-        imagePicker.allowsEditing = NO;
+        //imagePicker.allowsEditing = YES;
         [self presentModalViewController:imagePicker
                                 animated:YES];
         [imagePicker release];
@@ -142,7 +162,7 @@
                 [[UIImagePickerController alloc] init];
                 
                 picker.delegate = self;
-                picker.allowsEditing = NO;
+//                picker.allowsEditing = YES;
                 picker.sourceType = (sender == camera) ?
                 UIImagePickerControllerSourceTypeCamera :
                 UIImagePickerControllerSourceTypeSavedPhotosAlbum;
@@ -156,6 +176,7 @@
                  permittedArrowDirections:UIPopoverArrowDirectionUp
                  animated:YES];
                 [picker release];   
+             
             }
         }
     }
@@ -208,7 +229,8 @@
     //                          objectForKey:UIImagePickerControllerOriginalImage];
     //        
     imageView.image = image;
-    
+
+      
     //        if (newMedia)
     //            UIImageWriteToSavedPhotosAlbum(image,
     //                                           self,  
