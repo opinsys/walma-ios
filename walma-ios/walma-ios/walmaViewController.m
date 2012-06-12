@@ -24,15 +24,16 @@
 
 - (void)viewDidLoad
 {
-    NSString *servername = [[NSUserDefaults standardUserDefaults] stringForKey:@"walmaserver_preference"];
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    NSString *servername = [defaults stringForKey:@"walmaserver_preference"];
     NSLog(@"name before is %@", servername);
+     if(servername == nil||servername.length <1){
+        NSLog(@"servername %@", servername);
+        servername = @"http://walmademo.opinsys.fi";
+        [defaults setObject:servername forKey:@"walmaserver_preference"];
+         NSLog(@"servername %@",[defaults stringForKey:@"walmaserver_preference"]);
+    }
 
-    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *server = [defaults stringForKey:@"walmaserver_preference"];
-//    NSString *kissa = @"kissa";
-//    NSLog(server);
-//    NSLog(kissa);
     UIBarButtonItem *cameraButton = [[UIBarButtonItem alloc] 
                                      initWithTitle:@"Camera"
                                      style:UIBarButtonItemStyleBordered
@@ -81,7 +82,14 @@
 	 setting the quality to 90
      */
     //here we load servername from preferences  
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
     NSString *servername = [[NSUserDefaults standardUserDefaults] stringForKey:@"walmaserver_preference"];
+    if(servername == nil||servername ==@""){
+        NSLog(@"servername %@", servername);
+        servername = @"http://walmademo.opinsys.fi";
+        [defaults setObject:servername forKey:@"walmaserver_preference"];
+        
+    }
     NSString *serverurl = [NSString stringWithFormat:@"%@/api/create_multipart",servername];
     NSString *remotekey = [[NSUserDefaults standardUserDefaults] stringForKey:@"remotekey_preference"];
   	NSData *imageData = UIImageJPEGRepresentation(imageView.image, 1.0);
@@ -104,7 +112,7 @@
         NSArray *components = [response componentsSeparatedByString:@"\""];
         NSString *afterOpenBracket = [components objectAtIndex:3];
         
-        NSLog(afterOpenBracket);
+        NSLog(@"after %@",afterOpenBracket);
         NSLog(@"%@",[request responseString]);
         NSString * uri = [NSString stringWithFormat:@"http://walmademo.opinsys.fi%@",afterOpenBracket];
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:uri]];
@@ -149,7 +157,7 @@
 {
     NSString *deviceType = [UIDevice currentDevice].model;
     if([deviceType isEqualToString:@"iPad"]||[deviceType isEqualToString:@"iPad Simulator"] ){
-        NSLog(deviceType);
+        NSLog(@"devicetype= %@",deviceType);
         
         if ([self.popoverController isPopoverVisible]) {
             [self.popoverController dismissPopoverAnimated:YES];
@@ -203,7 +211,7 @@
         } 
         
         
-        NSLog(deviceType);
+        NSLog(@"devicetype= %@",deviceType);
     }
 }
 
@@ -211,7 +219,7 @@
                  editingInfo:(NSDictionary *)info
 {
     NSString *deviceType = [UIDevice currentDevice].model;
-    NSLog(deviceType);
+    NSLog(@"devicetype= %@",deviceType);
         if([deviceType isEqualToString:@"iPhone Simulator"] || [deviceType isEqualToString:@"iPhone"]){
         imageView.image = image;
         [picker dismissModalViewControllerAnimated:YES];
@@ -221,8 +229,8 @@
     [self.popoverController dismissPopoverAnimated:true];
     [popoverController release];
     
-    NSString *mediaType = [info
-                           objectForKey:UIImagePickerControllerMediaType];
+//    NSString *mediaType = [info
+//                           objectForKey:UIImagePickerControllerMediaType];
     [self dismissModalViewControllerAnimated:YES];
     //    if ([mediaType isEqualToString:(NSString *)kUTTypeImage]) {
     //        UIImage *image = [info
