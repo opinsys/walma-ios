@@ -1,3 +1,3 @@
 walma-ios is client for walmademo.opinsys.fi
-in walma-ios you can take picture with ios camera os pick image from gallery and send it to walma software.
+in walma-ios you can take picture with ios camera or pick image from gallery and send it to walma software.
 walma ios uses form post method to send image and remotekey atribute.
