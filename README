@@ -1,3 +1,3 @@
-this is the curl test line that allows image to send to walmademo.opinsys.fi 
-curl -v -X POST -F image=@moose.jpg http://walmademo.opinsys.fi/api/create_multipart
-as return you get url to new walma drawing.
+walma-ios is client for walmademo.opinsys.fi
+in walma-ios you can take picture with ios camera os pick image from gallery and send it to walma software.
+walma ios uses form post method to send image and remotekey atribute.
