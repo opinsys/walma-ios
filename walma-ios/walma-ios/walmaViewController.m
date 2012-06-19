@@ -28,6 +28,7 @@
     sendLabel.hidden = YES;
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
     NSString *servername = [defaults stringForKey:@"walmaserver_preference"];
+    NSString *cameraString = NSLocalizedString(@"CAMERA", nil);
     NSLog(@"name before is %@", servername);
      if(servername == nil||servername.length <1){
         NSLog(@"servername %@", servername);
@@ -36,13 +37,14 @@
          NSLog(@"servername %@",[defaults stringForKey:@"walmaserver_preference"]);
     }
 
+
     UIBarButtonItem *cameraButton = [[UIBarButtonItem alloc] 
-                                     initWithTitle:@"Camera"
+                                     initWithTitle:cameraString
                                      style:UIBarButtonItemStyleBordered
                                      target:self
                                      action:@selector(useCamera:)];
     UIBarButtonItem *cameraRollButton = [[UIBarButtonItem alloc] 
-                                         initWithTitle:@"Camera Roll"
+                                         initWithTitle:NSLocalizedString(@"ROLL", nil)
                                          style:UIBarButtonItemStyleBordered
                                          target:self
                                          action:@selector(useCameraRoll:)];
@@ -54,6 +56,7 @@
     UIBarButtonItem *flexibleSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
     NSArray *items = [NSArray arrayWithObjects: cameraButton,
                       cameraRollButton,flexibleSpace,sendImageButton, nil];
+    cameraRollButton.title = NSLocalizedString(@"ROLL", nil);
     
     [toolbar setItems:items animated:NO];
 
@@ -235,6 +238,7 @@
 //    [request startSynchronous];
     [request startAsynchronous];
     [activityIndicator startAnimating];
+    self.sendLabel.text = NSLocalizedString(@"SENDING", nil);
     sendLabel.hidden = NO;
     activityIndicator.hidden = NO;
        //        [uri release];

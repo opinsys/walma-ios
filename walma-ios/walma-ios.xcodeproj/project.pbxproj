@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		E3511FD3157E0E840095BF55 /* walma.png in Resources */ = {isa = PBXBuildFile; fileRef = E3511FD2157E0E840095BF55 /* walma.png */; };
 		E3511FD6157E0FF40095BF55 /* walma_pad.png in Resources */ = {isa = PBXBuildFile; fileRef = E3511FD5157E0FF40095BF55 /* walma_pad.png */; };
+		E3768F85159078F60075C429 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E3768F87159078F60075C429 /* Localizable.strings */; };
 		E385F3541586950B00137EB6 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E385F3531586950B00137EB6 /* MobileCoreServices.framework */; };
 		E385F3561586951500137EB6 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E385F3551586951500137EB6 /* SystemConfiguration.framework */; };
 		E385F3581586951C00137EB6 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E385F3571586951C00137EB6 /* CFNetwork.framework */; };
@@ -55,6 +56,8 @@
 /* Begin PBXFileReference section */
 		E3511FD2157E0E840095BF55 /* walma.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = walma.png; sourceTree = "<group>"; };
 		E3511FD5157E0FF40095BF55 /* walma_pad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = walma_pad.png; sourceTree = "<group>"; };
+		E3768F86159078F60075C429 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E3768F88159079060075C429 /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E385F3531586950B00137EB6 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		E385F3551586951500137EB6 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		E385F3571586951C00137EB6 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -249,6 +252,7 @@
 				E3E90E9F157D3DA3004F1127 /* MainStoryboard_iPad.storyboard */,
 				E3E90EA2157D3DA3004F1127 /* walmaViewController.h */,
 				E3ABA10E158712DC00866DF1 /* walmaViewController.m */,
+				E3768F87159078F60075C429 /* Localizable.strings */,
 				E3E90E91157D3DA3004F1127 /* Supporting Files */,
 			);
 			path = "walma-ios";
@@ -337,6 +341,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				fi,
 			);
 			mainGroup = E3E90E7B157D3DA2004F1127;
 			productRefGroup = E3E90E87157D3DA3004F1127 /* Products */;
@@ -361,6 +366,7 @@
 				E3511FD6157E0FF40095BF55 /* walma_pad.png in Resources */,
 				E385F3DB1586975100137EB6 /* README-GHUnit in Resources */,
 				E3ABA11D1587423B00866DF1 /* Settings.bundle in Resources */,
+				E3768F85159078F60075C429 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,6 +436,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		E3768F87159078F60075C429 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E3768F86159078F60075C429 /* en */,
+				E3768F88159079060075C429 /* fi */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		E3E90E93157D3DA3004F1127 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (

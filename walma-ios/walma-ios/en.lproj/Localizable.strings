@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  walma-ios
+
+  Created by Mikko Jokinen on 19.6.2012.
+  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+*/
+"SENDING" = "Sending Image!";
+"CAMERA"  = "Camera";
+"ROLL"    = "Camera Roll";
