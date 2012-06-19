@@ -17,13 +17,22 @@ UINavigationControllerDelegate, UIPopoverControllerDelegate, UIImagePickerContro
     UIImageView *imageView;
     UIButton *send;
     UIButton *gallery;
+    UITextView *uploading;
     UIButton *camera;
+    UIActivityIndicatorView *activityIndicator;
+    UILabel *sendLabel;
+
+    
     BOOL newMedia;
 }
 @property (nonatomic, retain) IBOutlet UIImageView *imageView;
+@property (nonatomic, retain) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (nonatomic, retain) IBOutlet UILabel *sendLabel;
+
 @property (nonatomic, retain) IBOutlet UIButton *send;
 @property (nonatomic, retain) IBOutlet UIButton *camera;
 @property (nonatomic, retain) IBOutlet UIButton *galley;
+
 
 @property (nonatomic, retain) UIPopoverController *popoverController;
 @property (nonatomic, retain) IBOutlet UIToolbar *toolbar;

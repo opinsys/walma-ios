@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="hKf-zt-ewM">
-                                <rect key="frame" x="-1" y="0.0" width="768" height="1004"/>
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1004"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="lD7-Xu-EA1">
@@ -26,11 +26,24 @@
                                     <barButtonItem title="Item" id="8lf-u7-hZl"/>
                                 </items>
                             </toolbar>
+                            <activityIndicatorView opaque="NO" contentMode="center" style="whiteLarge" id="r70-oZ-Jf1">
+                                <rect key="frame" x="366" y="483" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" text=" Sending image" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="e99-Tw-oSY">
+                                <rect key="frame" x="325" y="513" width="119" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="r70-oZ-Jf1" id="LkY-OB-qaZ"/>
                         <outlet property="imageView" destination="hKf-zt-ewM" id="aga-rL-XTe"/>
+                        <outlet property="sendLabel" destination="e99-Tw-oSY" id="yST-dA-AYN"/>
                         <outlet property="toolbar" destination="lD7-Xu-EA1" id="H0e-ex-sq5"/>
                     </connections>
                 </viewController>
@@ -45,10 +58,12 @@
                 <relationship kind="action" name="sendImage:"/>
                 <relationship kind="action" name="useCamera:"/>
                 <relationship kind="action" name="useCameraRoll:"/>
+                <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
                 <relationship kind="outlet" name="camera" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="galley" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="send" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="sendLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>
             </relationships>
         </class>

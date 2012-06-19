@@ -12,7 +12,7 @@
 #import "ASIFormDataRequest.h"
 
 @implementation walmaViewController
-@synthesize imageView, popoverController, toolbar, send, camera, galley;
+@synthesize imageView, popoverController, toolbar, send, camera, galley,activityIndicator,sendLabel;
 
 - (void)didReceiveMemoryWarning
 {
@@ -24,6 +24,8 @@
 
 - (void)viewDidLoad
 {
+    NSLog(@"ruutu latautui");
+    sendLabel.hidden = YES;
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
     NSString *servername = [defaults stringForKey:@"walmaserver_preference"];
     NSLog(@"name before is %@", servername);
@@ -49,10 +51,12 @@
                                         style:UIBarButtonItemStyleBordered
                                         target:self
                                         action:@selector(sendImage:)];
+    UIBarButtonItem *flexibleSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
     NSArray *items = [NSArray arrayWithObjects: cameraButton,
-                      cameraRollButton,sendImageButton, nil];
+                      cameraRollButton,flexibleSpace,sendImageButton, nil];
     
     [toolbar setItems:items animated:NO];
+
     [cameraButton release];
     [cameraRollButton release];
     [sendImageButton release];
@@ -75,56 +79,7 @@
 }
 -(IBAction)sendImage:(id)sender
 {
-
-    /*
-	 turning the image into a NSData object
-	 getting the image back out of the UIImageView
-	 setting the quality to 90
-     */
-    //here we load servername from preferences  
-    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
-    NSString *servername = [[NSUserDefaults standardUserDefaults] stringForKey:@"walmaserver_preference"];
-    if(servername == nil||servername ==@""){
-        NSLog(@"servername %@", servername);
-        servername = @"http://walmademo.opinsys.fi";
-        [defaults setObject:servername forKey:@"walmaserver_preference"];
-        
-    }
-    NSString *serverurl = [NSString stringWithFormat:@"%@/api/create_multipart",servername];
-    NSString *remotekey = [[NSUserDefaults standardUserDefaults] stringForKey:@"remotekey_preference"];
-  	NSData *imageData = UIImageJPEGRepresentation(imageView.image, 1.0);
-	// setting up the URL to post to
-    NSURL *url = [NSURL URLWithString:serverurl];
-	
-    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
-    
-    // Upload a file on disk
-    
-    // Upload an NSData instance
-    //TODO we need json support for response string
-    [request setPostValue:remotekey forKey:@"remotekey"];
-    [request setData:imageData withFileName:@"myphoto.jpg" andContentType:@"image/jpeg" forKey:@"image"];
-    [request startSynchronous];
-    NSError *error = [request error];
-    if (!error) {
-        NSString *response;
-        response = [request responseString];
-        NSArray *components = [response componentsSeparatedByString:@"\""];
-        NSString *afterOpenBracket = [components objectAtIndex:3];
-        
-        NSLog(@"after %@",afterOpenBracket);
-        NSLog(@"%@",[request responseString]);
-        NSString * uri = [NSString stringWithFormat:@"http://walmademo.opinsys.fi%@",afterOpenBracket];
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:uri]];
-//        [uri release];
-//        [response release];
-        imageData = nil;
-        imageView.image = nil;
-//        [imageData release];
-//        [url release];
-//        [request release];
-        
-    }  
+    [self imageSending];
 
 }
 - (IBAction)useCamera:(id)sender
@@ -144,6 +99,7 @@
         [self presentModalViewController:imagePicker
                                 animated:YES];
         [imagePicker release];
+    
         newMedia = YES;
     }
     
@@ -161,7 +117,6 @@
         
         if ([self.popoverController isPopoverVisible]) {
             [self.popoverController dismissPopoverAnimated:YES];
-            [popoverController release];
         } else {
             if ([UIImagePickerController isSourceTypeAvailable:
                  UIImagePickerControllerSourceTypeSavedPhotosAlbum])
@@ -183,7 +138,8 @@
                  presentPopoverFromBarButtonItem:sender
                  permittedArrowDirections:UIPopoverArrowDirectionUp
                  animated:YES];
-                [picker release];   
+                [picker release];
+               
              
             }
         }
@@ -213,49 +169,108 @@
         
         NSLog(@"devicetype= %@",deviceType);
     }
+     NSLog(@"tee jotain");
 }
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image
                  editingInfo:(NSDictionary *)info
 {
+    
     NSString *deviceType = [UIDevice currentDevice].model;
-    NSLog(@"devicetype= %@",deviceType);
-        if([deviceType isEqualToString:@"iPhone Simulator"] || [deviceType isEqualToString:@"iPhone"]){
+    NSLog(@"devicetype picker= %@",deviceType);
+    if([deviceType isEqualToString:@"iPhone Simulator"] || [deviceType isEqualToString:@"iPhone"]){
         imageView.image = image;
         [picker dismissModalViewControllerAnimated:YES];
-        }
-    
-       if([deviceType isEqualToString:@"iPad Simulator"]||[deviceType isEqualToString:@"iPad"]){
-    [self.popoverController dismissPopoverAnimated:true];
-    [popoverController release];
-    
-//    NSString *mediaType = [info
-//                           objectForKey:UIImagePickerControllerMediaType];
-    [self dismissModalViewControllerAnimated:YES];
-    //    if ([mediaType isEqualToString:(NSString *)kUTTypeImage]) {
-    //        UIImage *image = [info
-    //                          objectForKey:UIImagePickerControllerOriginalImage];
-    //        
-    imageView.image = image;
-
-      
-    //        if (newMedia)
-    //            UIImageWriteToSavedPhotosAlbum(image,
-    //                                           self,  
-    //                                           @selector(image:finishedSavingWithError:contextInfo:),
-    //                                           nil);
-    //    }
-    //    else if ([mediaType isEqualToString:(NSString *)kUTTypeMovie])
-    //    {
-    //        // Code here to support video if enabled
-    //    }
+        [self performSelectorOnMainThread:@selector(imageSending) withObject:nil waitUntilDone:YES];
     }
+    
+    if([deviceType isEqualToString:@"iPad Simulator"]||[deviceType isEqualToString:@"iPad"]){
+        [self.popoverController dismissPopoverAnimated:true];
+        [popoverController release];
+        imageView.image = image;
+        [self dismissModalViewControllerAnimated:YES];
+        [self performSelectorOnMainThread:@selector(imageSending) withObject:nil waitUntilDone:YES];
+    }
+    [deviceType release];
 }
 
 -(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
     [self dismissModalViewControllerAnimated:YES];
 }
+
+-(void)imageSending{
+    
+
+    //here we load servername from preferences
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    NSString *servername = [[NSUserDefaults standardUserDefaults] stringForKey:@"walmaserver_preference"];
+    if(servername == nil||servername ==@""){
+        NSLog(@"servername %@", servername);
+        servername = @"http://walmademo.opinsys.fi";
+        [defaults setObject:servername forKey:@"walmaserver_preference"];
+        
+    }
+    NSString *serverurl = [NSString stringWithFormat:@"%@/api/create_multipart",servername];
+    NSString *remotekey = [[NSUserDefaults standardUserDefaults] stringForKey:@"remotekey_preference"];
+    /*
+	 turning the image into a NSData object
+	 getting the image back out of the UIImageView
+	 setting the quality to 100
+     */
+    NSData *imageData = UIImageJPEGRepresentation(imageView.image, 1.0);
+	// setting up the URL to post to
+    NSURL *url = [NSURL URLWithString:serverurl];
+    //Form request with AsiFormDataRequest library
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
+    [request setDelegate:self];
+    [request setDidFinishSelector:@selector(requestDone:)];
+    // Upload an NSData instance
+    //TODO we need json support for response string
+    //we set remote key for walma watcher program
+    [request setPostValue:remotekey forKey:@"remotekey"];
+    //imageData is set for form
+    [request setData:imageData withFileName:@"myphoto.jpg" andContentType:@"image/jpeg" forKey:@"image"];
+    //request is made
+//    [request startSynchronous];
+    [request startAsynchronous];
+    [activityIndicator startAnimating];
+    sendLabel.hidden = NO;
+    activityIndicator.hidden = NO;
+       //        [uri release];
+        //        [response release];
+        //        [imageData release];
+        //        [url release];
+        //   
+        
+    
+    //would be nice to set error handling and return errors for users
+    
+}
+
+- (void)requestDone:(ASIHTTPRequest *)request
+{
+    [activityIndicator stopAnimating];
+    activityIndicator.hidden = YES;
+    sendLabel.hidden = YES;
+    NSError *error = [request error];
+    if (!error) {
+        NSString *response;
+        response = [request responseString];
+        NSArray *components = [response componentsSeparatedByString:@"\""];
+        NSString *walmaUrl = [components objectAtIndex:3];
+        
+        NSLog(@"after %@",response);
+        NSLog(@"%@",[request responseString]);
+        imageView.image = nil;
+        
+        NSString * uri = [NSString stringWithFormat:@"http://walmademo.opinsys.fi%@",walmaUrl];
+  
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:uri]];
+        
+    NSLog(@"latautuminen valmistui");
+    }
+    }
 
 -(void)image:(UIImage *)image
 finishedSavingWithError:(NSError *)error
@@ -276,11 +291,13 @@ finishedSavingWithError:(NSError *)error
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    NSLog(@"testi");
     [super viewWillAppear:animated];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    NSLog(@"testi2");
     [super viewDidAppear:animated];
 }
 
