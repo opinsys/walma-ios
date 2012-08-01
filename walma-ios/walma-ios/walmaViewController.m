@@ -257,6 +257,10 @@
     [activityIndicator stopAnimating];
     activityIndicator.hidden = YES;
     sendLabel.hidden = YES;
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+
+    NSString *servername = [defaults stringForKey:@"walmaserver_preference"];
+    NSLog(@"servername %@",[defaults stringForKey:@"walmaserver_preference"]);
     NSError *error = [request error];
     if (!error) {
         NSString *response;
@@ -268,7 +272,8 @@
         NSLog(@"%@",[request responseString]);
         imageView.image = nil;
         
-        NSString * uri = [NSString stringWithFormat:@"http://walmademo.opinsys.fi%@",walmaUrl];
+
+        NSString * uri = [NSString stringWithFormat:@"%@%@",servername,walmaUrl];
   
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:uri]];
         
