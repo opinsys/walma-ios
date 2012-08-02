@@ -12,7 +12,7 @@
 #import "ASIFormDataRequest.h"
 
 @implementation walmaViewController
-@synthesize imageView, popoverController, toolbar, send, camera, galley,activityIndicator,sendLabel;
+@synthesize imageView, popoverController, toolbar, activityIndicator,sendLabel;
 
 - (void)didReceiveMemoryWarning
 {
@@ -54,8 +54,8 @@
                                         target:self
                                         action:@selector(sendImage:)];
     UIBarButtonItem *flexibleSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-    NSArray *items = [NSArray arrayWithObjects: cameraButton,
-                      cameraRollButton,flexibleSpace,sendImageButton, nil];
+    NSArray *items = [NSArray arrayWithObjects: flexibleSpace,cameraButton,
+                      flexibleSpace,cameraRollButton,flexibleSpace, nil];
     cameraRollButton.title = NSLocalizedString(@"ROLL", nil);
     
     [toolbar setItems:items animated:NO];
@@ -63,6 +63,7 @@
     [cameraButton release];
     [cameraRollButton release];
     [sendImageButton release];
+    [UIBarButtonItem release];
     [super viewDidLoad];
 }
 
@@ -76,6 +77,7 @@
     [toolbar release];
     [popoverController release];
     [imageView release];
+    [UIBarButtonItem release];
     [super dealloc];
     
     
@@ -120,6 +122,7 @@
         
         if ([self.popoverController isPopoverVisible]) {
             [self.popoverController dismissPopoverAnimated:YES];
+            
         } else {
             if ([UIImagePickerController isSourceTypeAvailable:
                  UIImagePickerControllerSourceTypeSavedPhotosAlbum])
@@ -128,7 +131,7 @@
                 [[UIImagePickerController alloc] init];
                 
                 picker.delegate = self;
-//                picker.allowsEditing = YES;
+//               picker.allowsEditing = YES;
                 picker.sourceType = (sender == camera) ?
                 UIImagePickerControllerSourceTypeCamera :
                 UIImagePickerControllerSourceTypeSavedPhotosAlbum;
@@ -136,16 +139,15 @@
                                           initWithContentViewController:picker];
                 
                 popoverController.delegate = self;
-                
                 [self.popoverController 
                  presentPopoverFromBarButtonItem:sender
                  permittedArrowDirections:UIPopoverArrowDirectionUp
                  animated:YES];
                 [picker release];
-               
-             
-            }
+//                [self.popoverController release];
+
         }
+      }
     }
     if([deviceType isEqualToString:@"iPhone Simulator"]||[deviceType isEqualToString:@"iPhone"]){
         if([UIImagePickerController isSourceTypeAvailable:
@@ -241,12 +243,7 @@
     self.sendLabel.text = NSLocalizedString(@"SENDING", nil);
     sendLabel.hidden = NO;
     activityIndicator.hidden = NO;
-       //        [uri release];
-        //        [response release];
-        //        [imageData release];
-        //        [url release];
-        //   
-        
+
     
     //would be nice to set error handling and return errors for users
     
@@ -270,7 +267,7 @@
         
         NSLog(@"after %@",response);
         NSLog(@"%@",[request responseString]);
-        imageView.image = nil;
+        self.imageView.image = nil;
         
 
         NSString * uri = [NSString stringWithFormat:@"%@%@",servername,walmaUrl];
@@ -319,6 +316,13 @@ finishedSavingWithError:(NSError *)error
 {
 	[super viewDidDisappear:animated];
 }
+- (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController {
+    NSLog(@"popoverii");
+
+    //    [popoverController release];
+}
+
+
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {

@@ -5,6 +5,6 @@
   Created by Mikko Jokinen on 19.6.2012.
   Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 */
-"SENDING" = "Lähetetään kuva!";
+"SENDING" = "Lähetetään!";
 "CAMERA"  = "Kamera";
 "ROLL"    = "Kuva galleria";

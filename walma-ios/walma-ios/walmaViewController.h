@@ -29,9 +29,9 @@ UINavigationControllerDelegate, UIPopoverControllerDelegate, UIImagePickerContro
 @property (nonatomic, retain) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (nonatomic, retain) IBOutlet UILabel *sendLabel;
 
-@property (nonatomic, retain) IBOutlet UIButton *send;
-@property (nonatomic, retain) IBOutlet UIButton *camera;
-@property (nonatomic, retain) IBOutlet UIButton *galley;
+//@property (nonatomic, retain) IBOutlet UIButton *send;
+//@property (nonatomic, retain) IBOutlet UIButton *camera;
+//@property (nonatomic, retain) IBOutlet UIButton *galley;
 
 
 @property (nonatomic, retain) UIPopoverController *popoverController;
